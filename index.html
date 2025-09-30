@@ -1,205 +1,62 @@
-<<<<<<< HEAD
-<ul>
-  <li><a href="index.html">Головна</a></li>
-  <li><a href="lab1/index.html">Лабораторна робота №1</a></li>
-  <li><a href="lab2/index.html">Лабораторна робота №2</a></li>
-  <li><a href="lab3/index.html">Лабораторна робота №3</a></li>
-</ul>
-=======
 <!doctype html>
 <html lang="uk">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Анкета студента — Lab3</title>
+  <title>Головна сторінка (ЛР2)</title>
   <style>
-    body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      max-width: 900px;
-      margin: 24px auto;
-      padding: 0 16px;
-      background: #f8f9fa;
-    }
-    header, main, footer {
-      display: block;
-    }
-    h1 { font-size: 2rem; }
-    fieldset {
-      margin: 12px 0;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      background: #fff;
-    }
-    label { display: block; margin: 6px 0; font-weight: 500; }
-    .actions { text-align: right; margin-top: 12px; }
-
-    /* Стиль для шкали */
-    .range-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    input[type=range] {
-      width: 200px;
-      appearance: none;
-      height: 8px;
-      border-radius: 4px;
-      background: #ccc;
-      outline: none;
-      cursor: pointer;
-    }
-    input[type=range]::-webkit-slider-thumb {
-      appearance: none;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 0 2px rgba(0,0,0,0.5);
-      background: var(--thumb-color, #888);
-    }
-    input[type=range]::-moz-range-thumb {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 0 2px rgba(0,0,0,0.5);
-      background: var(--thumb-color, #888);
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #333; color: #fff; padding: 15px; text-align: center; }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 15px; background: #444; }
+    nav ul li { position: relative; }
+    nav ul li a { color: #fff; text-decoration: none; padding: 8px 12px; display: block; }
+    nav ul li ol { display: none; position: absolute; top: 100%; left: 0; background: #555; padding: 10px; }
+    nav ul li:hover ol { display: block; }
+    nav ul li ol li { margin: 5px 0; }
+    main { display: flex; padding: 20px; gap: 20px; }
+    article { flex: 3; }
+    aside { flex: 1; background: #f0f0f0; padding: 10px; }
+    footer { margin-top: 20px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Анкета студента</h1>
+    <h1>Програмування в Internet</h1>
+    <h2>Лабораторна робота №2</h2>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="./index.html">Головна</a></li>
+      <li><a href="#">Лабораторні роботи</a>
+        <ol>
+          <li><a href="./lab1/index.html">Лабораторна робота №1</a></li>
+          <li><a href="./lab2/index.html">Лабораторна робота №2</a></li>
+          <li><a href="./lab3/index.html">Лабораторна робота №3</a></li>
+        </ol>
+      </li>
+    </ul>
+  </nav>
+
   <main>
-    <form action="/submit" method="post" enctype="multipart/form-data" novalidate>
+    <article>
+      <h2>Лабораторні роботи</h2>
+      <p>Це головна сторінка сайту. Вона є копією ЛР2 (як вимагалось у завданні). Через меню можна перейти до будь-якої лабораторної роботи.</p>
+    </article>
 
-      <section aria-labelledby="personal">
-        <h2 id="personal">Персональні дані</h2>
-        <fieldset>
-          <legend>Основна інформація</legend>
-
-          <label for="fullname">ПІБ</label>
-          <input id="fullname" name="fullname" type="text" placeholder="Ім'я Прізвище" required minlength="3">
-
-          <label for="email">Електронна пошта</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required>
-
-          <label for="password">Пароль</label>
-          <input id="password" name="password" type="password" minlength="6" required>
-
-          <div>
-            <label for="age">Вік</label>
-            <input id="age" name="age" type="number" min="14" max="120" required>
-          </div>
-
-          <div>
-            <label for="birth">Дата народження</label>
-            <input id="birth" name="birth" type="date" required>
-          </div>
-
-          <fieldset>
-            <legend>Стать</legend>
-            <label><input type="radio" name="gender" value="male" required> Чоловіча</label>
-            <label><input type="radio" name="gender" value="female"> Жіноча</label>
-            <label><input type="radio" name="gender" value="other"> Інша</label>
-          </fieldset>
-
-        </fieldset>
-      </section>
-
-      <section aria-labelledby="languages">
-        <h2 id="languages">Мови та предмети</h2>
-        <fieldset>
-          <legend>Володіння мовами</legend>
-          <label><input type="checkbox" name="lang" value="english"> Англійська</label>
-          <label><input type="checkbox" name="lang" value="spanish"> Іспанська</label>
-          <label><input type="checkbox" name="lang" value="french"> Французька</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Країна</legend>
-          <label for="country">Оберіть країну</label>
-          <select id="country" name="country" required>
-            <option value="">-- Оберіть країну --</option>
-            <option>Україна</option>
-            <option>Польща</option>
-            <option>Німеччина</option>
-            <option>США</option>
-            <option>Інша</option>
-          </select>
-        </fieldset>
-
-        <fieldset>
-          <legend>Предмети (можна кілька)</legend>
-          <label for="subjects">Оберіть предмети</label>
-          <select id="subjects" name="subjects[]" multiple size="5">
-            <option value="math">Математика</option>
-            <option value="cs">Інформатика</option>
-            <option value="physics">Фізика</option>
-            <option value="chem">Хімія</option>
-            <option value="eng">Англійська</option>
-          </select>
-        </fieldset>
-      </section>
-
-      <section aria-labelledby="skills">
-        <h2 id="skills">Додаткові параметри</h2>
-        <fieldset>
-          <legend>Інтереси та навички</legend>
-
-          <div class="range-container">
-            <label for="interest">Оцініть інтерес до інформатики</label>
-            <input id="interest" name="interest" type="range" min="0" max="10" value="5">
-          </div>
-
-          <label for="skills">Опишіть навички</label>
-          <textarea id="skills" name="skills" rows="5" placeholder="Коротко опишіть ваші навички..."></textarea>
-
-          <label for="resume">Завантажити резюме</label>
-          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx">
-
-          <label for="color">Улюблений колір</label>
-          <input id="color" name="color" type="color" value="#0066cc">
-
-          <label for="time">Бажаний час навчання</label>
-          <input id="time" name="time" type="time">
-
-        </fieldset>
-      </section>
-
-      <div class="actions">
-        <input type="submit" value="Відправити анкету">
-      </div>
-
-    </form>
+    <aside>
+      <h2>Інші курси</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+        <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+        <li><a href="https://www.learn-js.org/">JavaScript</a></li>
+        <li><a href="https://www.sqltutorial.org/">SQL</a></li>
+        <li><a href="https://www.python.org/about/gettingstarted/">Python</a></li>
+      </ul>
+    </aside>
   </main>
 
   <footer>
-    <p>Student card by Nazar Yaremchuk. All rights reserved.</p>
+    <p>© 2025 Nazar Yaremchuk. All rights reserved.</p>
   </footer>
-
-  <script>
-    const range = document.getElementById('interest');
-
-    function updateRangeThumb() {
-      const val = (range.value - range.min) / (range.max - range.min);
-      // HSL: 0 = червоний, 120 = зелений; тут робимо неяскраво
-      const hue = 0 + 120 * val;
-      const color = `hsl(${hue}, 60%, 50%)`; // 60% насиченість, 50% яскравість = приємні тони
-      range.style.setProperty('--thumb-color', color);
-
-      const percent = val * 100;
-      range.style.background = `linear-gradient(to right, ${color} ${percent}%, #ccc ${percent}%)`;
-    }
-
-    range.addEventListener('input', updateRangeThumb);
-    updateRangeThumb();
-  </script>
 </body>
 </html>
->>>>>>> a889fcc89080f4d55977cbbfa7c242909ce3da8c

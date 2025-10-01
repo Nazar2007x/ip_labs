@@ -1,46 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <title>Лабораторна робота №1</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #333; color: #fff; padding: 15px; text-align: center; }
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 15px; background: #444; }
-    nav ul li { position: relative; }
-    nav ul li a { color: #fff; text-decoration: none; padding: 8px 12px; display: block; }
-    nav ul li ol { display: none; position: absolute; top: 100%; left: 0; background: #555; padding: 10px; }
-    nav ul li:hover ol { display: block; }
-    nav ul li ol li { margin: 5px 0; }
-    main { padding: 20px; }
-    footer { margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картка студента</title>
 </head>
 <body>
-  <header>
-    <h1>Лабораторна робота №1</h1>
-  </header>
+    <header>
+        <h1>Картка студента</h1>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="../index.html">Головна</a></li>
-      <li><a href="#">Лабораторні роботи</a>
-        <ol>
-          <li><a href="../lab1/index.html">Лабораторна робота №1</a></li>
-          <li><a href="../lab2/index.html">Лабораторна робота №2</a></li>
-          <li><a href="../lab3/index.html">Лабораторна робота №3</a></li>
-        </ol>
-      </li>
-    </ul>
-  </nav>
+    <main>
+        <section>
+            <h2>Інформація про студента</h2>
+            <p><strong>Ім’я:</strong> Яремчук Назар</p>
+            <p><strong>Факультет:</strong> Інформаційних технологій</p>
+            <p><strong>Група:</strong> ІП-31</p>
+        </section>
 
-  <main>
-    <h2>Зміст</h2>
-    <p>Тут розміщується виконання лабораторної роботи №1.</p>
-  </main>
+        <section>
+            <h2>Досягнення</h2>
+            <ul>
+                <li>Розробка веб-сайтів.</li>
+                <li>Програмування на мові C.</li>
+                <li>Успішне завершення курсу <strong><q>Основи веб-дизайну</q></strong>.</li>
+                <li>Участь у хакатоні з <abbr title="HyperText Markup Language">HTML</abbr> та <abbr title="Cascading Style Sheets">CSS</abbr>.</li>
+                <li>Сертифікат <mark><q>Веб-розробник: початковий рівень</q></mark>.</li>
+            </ul>
+        </section>
 
-  <footer>
-    <p>© 2025 Nazar Yaremchuk. Лабораторна робота №1</p>
-  </footer>
+        <section>
+            <h2>Додаткова інформація</h2>
+            <p><abbr title="English as a Second Language">ESL</abbr> рівень: <strong>B2</strong></p>
+            <p>Студент бере участь у <ins>проектах зі створення сайтів для малого бізнесу</ins> та регулярно <em>відвідує пари</em> <del>працює над власними проектами</del>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Коледж Інформаційних Технологій</p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 4 - ІТ коледж Львівської політехніки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        main {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .content {
+            flex: 3;
+            padding-right: 20px;
+        }
+        
+        aside {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .logo-section {
+            text-align: center;
+        }
+        
+        .logo {
+            height: 300px;
+            width: auto;
+        }
+        
+        .subscribe-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .video-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        video {
+            width: 100%;
+            height: 540px;
+            background-color: #000;
+        }
+        
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-top: 15px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .video-preview {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .video-preview img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        
+        .video-preview a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .video-preview a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ІТ коледж Львівської політехніки - YouTube канал</h1>
+    </header>
+    
+    <main>
+        <div class="content">
+            <!-- Секція 1: Логотип -->
+            <section class="logo-section">
+                <h2>Логотип коледжу</h2>
+                <img src="https://itcollege.lviv.ua/wp-content/uploads/2020/10/cropped-logo.png" 
+                     alt="Логотип ІТ коледжу Львівської політехніки" 
+                     class="logo">
+            </section>
+            
+            <!-- Секція 2: Опис та кнопка -->
+            <section>
+                <h2>Про наш канал</h2>
+                <p>ІТ коледж Львівської політехніки - сучасний навчальний заклад, що готує фахівців у галузі інформаційних технологій. На нашому YouTube каналі ви знайдете корисну інформацію про навчання, події коледжу, освітні програми та багато іншого.</p>
+                <button class="subscribe-btn">Підписатися</button>
+            </section>
+            
+            <!-- Секція 3: Відео -->
+            <section>
+                <h2>Відео про коледж</h2>
+                <div class="video-container">
+                    <video controls poster="poster.jpg">
+                        <source src="video1.mp4" type="video/mp4">
+                        <source src="video1.webm" type="video/webm">
+                        Ваш браузер не підтримує відтворення відео. 
+                        <a href="video1.mp4">Завантажте відео</a> для перегляду.
+                    </video>
+                </div>
+            </section>
+            
+            <!-- Секція 4: Аудіо -->
+            <section>
+                <h2>Аудіо запис</h2>
+                <audio controls>
+                    <source src="videoplayback.m4a" type="audio/mp4">
+                    <source src="videoplayback.ogg" type="audio/ogg">
+                    Ваш браузер не підтримує відтворення аудіо.
+                    <a href="videoplayback.m4a">Завантажте аудіофайл</a>.
+                </audio>
+            </section>
+            
+            <!-- Секція 5: YouTube відео -->
+            <section>
+                <h2>Наше відео на YouTube</h2>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/ВАШ_КОД_ВІДЕО" 
+                            title="Відео про навчання в ІТ коледжі" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+            
+            <!-- Секція 6: Google Maps -->
+            <section>
+                <h2>Карта університетів та коледжів Львова</h2>
+                <div class="iframe-container">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=ВАШ_КОД_КАРТИ" 
+                            title="Карта університетів та коледжів Львова">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Блок aside: Прев'ю відео -->
+        <aside>
+            <h3>Спеціальності та освітні програми</h3>
+            
+            <div class="video-preview">
+                <img src="preview1.jpg" alt="Прев'ю відео 1">
+                <a href="#">Вивчай спеціальність майбутнього...</a>
+            </div>
+            
+            <div class="video-preview">
+                <img src="preview2.jpg" alt="Прев'ю відео 2">
+                <a href="#">122 Комп'ютерні науки. Computer Science. Вступ у ІТ...</a>
+            </div>
+            
+            <div class="video-preview">
+                <img src="preview3.jpg" alt="Прев'ю відео 3">
+                <a href="#">172 Телекомунікації та радіотехніка – ...</a>
+            </div>
+            
+            <div class="video-preview">
+                <img src="preview4.jpg" alt="Прев'ю відео 4">
+                <a href="#">172 Телекомунікації та радіотехніка – Інжиніринг та...</a>
+            </div>
+            
+            <div class="video-preview">
+                <img src="preview5.jpg" alt="Прев'ю відео 5">
+                <a href="#">029 Інформаційна, бібліотечна та архівна справа</a>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // Обробник кнопки "Підписатися"
+        document.querySelector('.subscribe-btn').addEventListener('click', function() {
+            window.open('https://www.youtube.com/@itcollegelviv', '_blank');
+        });
+    </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна робота 4 - ІТ коледж Львівської політехніки</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,307 +13,537 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
         }
         
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 1rem;
+            padding: 2rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
         }
         
         main {
             display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
+            gap: 30px;
         }
         
         .content {
             flex: 3;
-            padding-right: 20px;
         }
         
         aside {
             flex: 1;
-            background-color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: white;
         }
         
         section {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        h1, h2 {
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        h1, h2, h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        aside h3 {
+            color: white;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .logo-section {
             text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         
         .logo {
-            height: 300px;
+            height: 200px;
             width: auto;
-            border: 1px solid #ddd;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         .subscribe-btn {
-            background-color: #e74c3c;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
         }
         
         .subscribe-btn:hover {
-            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
         }
         
         .video-container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
-        }
-        
-        video {
-            width: 100%;
-            height: 540px;
-            background-color: #000;
-            border: 2px solid #ddd;
-        }
-        
-        .video-placeholder {
-            width: 100%;
-            height: 540px;
-            background: linear-gradient(45deg, #2c3e50, #3498db);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            border: 2px solid #ddd;
-        }
-        
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-        
-        .audio-placeholder {
-            padding: 20px;
-            background-color: #ecf0f1;
-            text-align: center;
-            border: 1px solid #bdc3c7;
-            border-radius: 5px;
         }
         
         .iframe-container {
             position: relative;
             width: 100%;
             height: 400px;
-            margin-top: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
         }
         
-        .iframe-placeholder {
-            width: 100%;
-            height: 400px;
-            background-color: #34495e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .audio-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            border: 2px solid #2c3e50;
-        }
-        
-        .video-preview {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .video-preview img {
-            width: 120px;
-            height: 90px;
-            object-fit: cover;
-            margin-right: 15px;
-            border-radius: 5px;
-            background-color: #bdc3c7;
-        }
-        
-        .video-preview a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        .video-preview a:hover {
-            color: #e74c3c;
-        }
-        
-        .placeholder-img {
-            width: 120px;
-            height: 90px;
-            background: linear-gradient(45deg, #3498db, #9b59b6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
             text-align: center;
         }
         
-        .college-links {
+        .audio-section h2 {
+            color: white;
+        }
+        
+        .audio-player {
+            width: 100%;
             margin-top: 15px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: white;
+            padding: 10px;
+        }
+        
+        .audio-info {
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        
+        .college-links {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
         }
         
         .college-links a {
-            color: #3498db;
+            color: white;
             text-decoration: none;
-            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
         }
         
         .college-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .social-icon {
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .specialties-grid {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .specialty-card {
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .specialty-card:hover {
+            transform: translateX(10px);
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .specialty-number {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #e74c3c;
+        }
+        
+        .specialty-name {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .map-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .map-alternative {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-alternative a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-alternative a:hover {
             text-decoration: underline;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+
+        .section-title i {
+            color: #3498db;
+        }
+
+        .video-description {
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .audio-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .status-loading {
+            color: #f39c12;
+        }
+
+        .status-success {
+            color: #27ae60;
+        }
+
+        .status-error {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding-right: 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .college-links {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>ІТ коледж Львівської політехніки - YouTube канал</h1>
-    </header>
-    
-    <main>
-        <div class="content">
-            <!-- Секція 1: Логотип -->
-            <section class="logo-section">
-                <h2>Логотип коледжу</h2>
-                <img src="https://itcollege.lviv.ua/wp-content/uploads/2020/10/cropped-logo.png" 
-                     alt="Логотип ІТ коледжу Львівської політехніки" 
-                     class="logo">
-                <div class="college-links">
-                    <a href="https://itcollege.lviv.ua/" target="_blank">Офіційний сайт</a>
-                    <a href="https://www.facebook.com/itcollege.lviv.ua/" target="_blank">Facebook</a>
-                    <a href="https://www.instagram.com/itcollege_lp/" target="_blank">Instagram</a>
-                </div>
-            </section>
-            
-            <!-- Секція 2: Опис та кнопка -->
-            <section>
-                <h2>Про наш канал</h2>
-                <p>ІТ коледж Львівської політехніки - сучасний навчальний заклад, що готує фахівців у галузі інформаційних технологій. На нашому YouTube каналі ви знайдете корисну інформацію про навчання, події коледжу, освітні програми та багато іншого.</p>
-                <button class="subscribe-btn">Підписатися</button>
-            </section>
-            
-            <!-- Секція 3: Відео -->
-            <section>
-                <h2>Відео про коледж</h2>
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        Відео "video1.mp4"<br>
-                        (файл відсутній)
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Секція 4: Аудіо -->
-            <section>
-                <h2>Аудіо запис</h2>
-                <div class="audio-placeholder">
-                    Аудіо файл "videoplayback.m4a"<br>
-                    (файл відсутній)
-                </div>
-            </section>
-            
-            <!-- Секція 5: YouTube відео -->
-            <section>
-                <h2>Наше відео на YouTube</h2>
-                <div class="iframe-container">
-                    <iframe src="https://www.youtube.com/embed/5XUg2h8mi_g" 
-                            title="Відео про навчання в ІТ коледжі Львівської політехніки" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-            
-            <!-- Секція 6: Google Maps -->
-            <section>
-                <h2>Карта університетів та коледжів Львова</h2>
-                <div class="iframe-container">
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1Rr1_1-MRcSR7VXHnI51L5rSPMg0&hl=en&ehbc=2E312F" 
-                            title="Карта університетів та коледжів Львова"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-        </div>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> ІТ коледж Львівської політехніки</h1>
+            <p>YouTube канал | Сучасна освіта в галузі IT</p>
+        </header>
         
-        <!-- Блок aside: Прев'ю відео -->
-        <aside>
-            <h3>Спеціальності та освітні програми</h3>
-            
-            <div class="video-preview">
-                <div class="placeholder-img">122</div>
-                <a href="https://itcollege.lviv.ua/specialty/kompyuterni-nauky/" target="_blank">122 Комп'ютерні науки</a>
+        <main>
+            <div class="content">
+                <!-- Секція 1: Логотип та соцмережі -->
+                <section class="logo-section">
+                    <h2><i class="fas fa-university"></i> Наш коледж</h2>
+                    <img src="https://itcollege.lviv.ua/wp-content/uploads/2022/01/logo-lit.jpg" 
+                         alt="Логотип ІТ коледжу Львівської політехніки" 
+                         class="logo">
+                    <div class="college-links">
+                        <a href="https://itcollege.lviv.ua/" target="_blank">
+                            <i class="fas fa-globe social-icon"></i>
+                            Вебсайт
+                        </a>
+                        <a href="https://www.facebook.com/ITcollegeLviv/" target="_blank">
+                            <i class="fab fa-facebook social-icon"></i>
+                            Facebook
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCKJxI8Y1eEqB3rs5oLxIL4Q" target="_blank">
+                            <i class="fab fa-youtube social-icon"></i>
+                            YouTube
+                        </a>
+                        <a href="https://www.instagram.com/it_college_lviv/" target="_blank">
+                            <i class="fab fa-instagram social-icon"></i>
+                            Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@it_college_lviv" target="_blank">
+                            <i class="fab fa-tiktok social-icon"></i>
+                            TikTok
+                        </a>
+                        <a href="https://invite.viber.com/?g2=AQAfespGu7NUkVPcnlcyhJOEmcDHupxwoOOxJbQsOIgtknPG0vUMa1qgjq2b2aJ0&lang=uk" target="_blank">
+                            <i class="fab fa-viber social-icon"></i>
+                            Viber
+                        </a>
+                        <a href="https://www.linkedin.com/company/it-college-of-lviv-polytechnic" target="_blank">
+                            <i class="fab fa-linkedin social-icon"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Секція 2: Опис та кнопка -->
+                <section>
+                    <h2 class="section-title"><i class="fas fa-info-circle"></i> Про наш канал</h2>
+                    <p>ІТ коледж Львівської політехніки - сучасний навчальний заклад, що готує фахівців у галузі інформаційних технологій. На нашому YouTube каналі ви знайдете корисну інформацію про навчання, події коледжу, освітні програми та багато іншого.</p>
+                    <button class="subscribe-btn">
+                        <i class="fab fa-youtube"></i> Підписатися на YouTube
+                    </button>
+                </section>
+                
+                <!-- Секція 3: Відео про коледж -->
+                <section>
+                    <h2 class="section-title"><i class="fas fa-video"></i> Відео про коледж</h2>
+                    <div class="video-container">
+                        <div class="iframe-container">
+                            <iframe src="https://www.youtube.com/embed/PWPJxbaM7Fc" 
+                                    title="Відео про навчання в ІТ коледжі Львівської політехніки" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="video-description">Знайомство з ІТ коледжем та його можливостями</p>
+                    </div>
+                </section>
+                
+                <!-- Секція 4: Аудіо запис -->
+                <section class="audio-section">
+                    <h2 class="section-title"><i class="fas fa-music"></i> Аудіо запис</h2>
+                    <p>Прослухайте аудіопрезентацію нашого коледжу</p>
+                    
+                    <!-- Локальний аудіофайл -->
+                    <audio class="audio-player" controls>
+                        <source src="audio/college-presentation.mp3" type="audio/mpeg">
+                        <source src="audio/college-presentation.wav" type="audio/wav">
+                        Ваш браузер не підтримує відтворення аудіо.
+                    </audio>
+                    
+                    <div id="audio-status" class="audio-status status-loading">
+                        <i class="fas fa-sync-alt fa-spin"></i> Завантаження аудіо...
+                    </div>
+                    
+                    <div class="audio-info">
+                        <h4><i class="fas fa-info-circle"></i> Про цей аудіозапис:</h4>
+                        <p>Це аудіопрезентація ІТ коледжу Львівської політехніки. Ви можете прослухати інформацію про навчання, спеціальності, можливості для студентів та перспективи випускників.</p>
+                    </div>
+                </section>
+                
+                <!-- Секція 5: Наші відео -->
+                <section>
+                    <h2 class="section-title"><i class="fas fa-film"></i> Наші відео</h2>
+                    <div class="video-container">
+                        <div class="iframe-container">
+                            <iframe src="https://www.youtube.com/embed/QqxRsF56nLQ" 
+                                    title="Ще одне відео про ІТ коледж" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="video-description">Додаткові матеріали про життя в коледжі</p>
+                    </div>
+                </section>
+                
+                <!-- Секція 6: Google Maps -->
+                <section class="map-section">
+                    <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> Карта університетів та коледжів Львова</h2>
+                    <div class="iframe-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82352.6004166677!2d23.91417405!3d49.83266745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c09109a57%3A0x4223c517012378e2!2z0JvRltC90ZbQutCw0Y8g0LIg0JvQtdC90LjQvNCw0L3RltC90ZbQuSDRgdC70YPRh9Cw0Lkg0JvQvtC80ZbRltC60LA!5e0!3m2!1suk!2sua!4v1697212345678!5m2!1suk!2sua" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="map-alternative">
+                        <a href="https://maps.app.goo.gl/UgQdvvJDFh8tm6666" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Відкрити детальну карту університетів Львова
+                        </a>
+                    </div>
+                </section>
             </div>
             
-            <div class="video-preview">
-                <div class="placeholder-img">126</div>
-                <a href="https://itcollege.lviv.ua/specialty/informaczijni-systemy-ta-tehnologiyi/" target="_blank">126 Інформаційні системи та технології</a>
-            </div>
-            
-            <div class="video-preview">
-                <div class="placeholder-img">172</div>
-                <a href="https://itcollege.lviv.ua/specialty/telekomunikacziyi-ta-radiotexnika/" target="_blank">172 Телекомунікації та радіотехніка</a>
-            </div>
-            
-            <div class="video-preview">
-                <div class="placeholder-img">029</div>
-                <a href="https://itcollege.lviv.ua/specialty/informaczijna-bibliotechna-ta-arkivna-sprava/" target="_blank">029 Інформаційна, бібліотечна та архівна справа</a>
-            </div>
-            
-            <div class="video-preview">
-                <div class="placeholder-img">121</div>
-                <a href="https://itcollege.lviv.ua/specialty/inzheneriya-programnogo-zabezpechennya/" target="_blank">121 Інженерія програмного забезпечення</a>
-            </div>
-        </aside>
-    </main>
+            <!-- Блок aside: Спеціальності -->
+            <aside>
+                <h3><i class="fas fa-laptop-code"></i> Спеціальності</h3>
+                <div class="specialties-grid">
+                    <a href="https://itcollege.lviv.ua/specialty/#he-c01a7572" class="specialty-card" target="_blank">
+                        <div class="specialty-number">121</div>
+                        <div class="specialty-name">Інженерія програмного забезпечення</div>
+                    </a>
+                    <a href="https://itcollege.lviv.ua/specialty/#he-c01a7572" class="specialty-card" target="_blank">
+                        <div class="specialty-number">122</div>
+                        <div class="specialty-name">Комп'ютерні науки</div>
+                    </a>
+                    <a href="https://itcollege.lviv.ua/specialty/#he-c01a7572" class="specialty-card" target="_blank">
+                        <div class="specialty-number">126</div>
+                        <div class="specialty-name">Інформаційні системи та технології</div>
+                    </a>
+                    <a href="https://itcollege.lviv.ua/specialty/#he-c01a7572" class="specialty-card" target="_blank">
+                        <div class="specialty-number">172</div>
+                        <div class="specialty-name">Телекомунікації та радіотехніка</div>
+                    </a>
+                    <a href="https://itcollege.lviv.ua/specialty/#he-c01a7572" class="specialty-card" target="_blank">
+                        <div class="specialty-number">029</div>
+                        <div class="specialty-name">Інформаційна, бібліотечна та архівна справа</div>
+                    </a>
+                </div>
+            </aside>
+        </main>
+    </div>
 
     <script>
         // Обробник кнопки "Підписатися"
         document.querySelector('.subscribe-btn').addEventListener('click', function() {
-            window.open('https://www.youtube.com/@itcollegelviv', '_blank');
+            window.open('https://www.youtube.com/channel/UCKJxI8Y1eEqB3rs5oLxIL4Q', '_blank');
         });
-        
-        // Додаємо обробники кліку для прев'ю відео
-        document.querySelectorAll('.video-preview a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open(this.href, '_blank');
-            });
+
+        // Обробка аудіо
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.querySelector('audio');
+            const audioStatus = document.getElementById('audio-status');
+            
+            if (audio) {
+                audio.addEventListener('loadeddata', function() {
+                    audioStatus.innerHTML = '<i class="fas fa-check"></i> Аудіо завантажено успішно!';
+                    audioStatus.className = 'audio-status status-success';
+                });
+                
+                audio.addEventListener('canplaythrough', function() {
+                    audioStatus.innerHTML = '<i class="fas fa-check"></i> Аудіо готове до відтворення';
+                    audioStatus.className = 'audio-status status-success';
+                });
+                
+                audio.addEventListener('error', function() {
+                    audioStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Помилка завантаження аудіо. Перевірте шлях до файлу.';
+                    audioStatus.className = 'audio-status status-error';
+                    console.log('Помилка аудіо. Шлях: audio/college-presentation.mp3');
+                });
+                
+                audio.addEventListener('loadstart', function() {
+                    audioStatus.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Завантаження аудіо...';
+                    audioStatus.className = 'audio-status status-loading';
+                });
+            }
         });
     </script>
 </body>

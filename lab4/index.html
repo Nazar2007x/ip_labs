@@ -65,6 +65,7 @@
         .logo {
             height: 300px;
             width: auto;
+            border: 1px solid #ddd;
         }
         
         .subscribe-btn {
@@ -91,11 +92,32 @@
             width: 100%;
             height: 540px;
             background-color: #000;
+            border: 2px solid #ddd;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            border: 2px solid #ddd;
         }
         
         audio {
             width: 100%;
             margin-top: 10px;
+        }
+        
+        .audio-placeholder {
+            padding: 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
         }
         
         .iframe-container {
@@ -112,6 +134,17 @@
             border-radius: 5px;
         }
         
+        .iframe-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #34495e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: 2px solid #2c3e50;
+        }
+        
         .video-preview {
             display: flex;
             align-items: center;
@@ -126,6 +159,7 @@
             object-fit: cover;
             margin-right: 15px;
             border-radius: 5px;
+            background-color: #bdc3c7;
         }
         
         .video-preview a {
@@ -136,6 +170,32 @@
         
         .video-preview a:hover {
             color: #e74c3c;
+        }
+        
+        .placeholder-img {
+            width: 120px;
+            height: 90px;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .college-links {
+            margin-top: 15px;
+        }
+        
+        .college-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .college-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -152,6 +212,11 @@
                 <img src="https://itcollege.lviv.ua/wp-content/uploads/2020/10/cropped-logo.png" 
                      alt="Логотип ІТ коледжу Львівської політехніки" 
                      class="logo">
+                <div class="college-links">
+                    <a href="https://itcollege.lviv.ua/" target="_blank">Офіційний сайт</a>
+                    <a href="https://www.facebook.com/itcollege.lviv.ua/" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/itcollege_lp/" target="_blank">Instagram</a>
+                </div>
             </section>
             
             <!-- Секція 2: Опис та кнопка -->
@@ -165,32 +230,28 @@
             <section>
                 <h2>Відео про коледж</h2>
                 <div class="video-container">
-                    <video controls poster="poster.jpg">
-                        <source src="video1.mp4" type="video/mp4">
-                        <source src="video1.webm" type="video/webm">
-                        Ваш браузер не підтримує відтворення відео. 
-                        <a href="video1.mp4">Завантажте відео</a> для перегляду.
-                    </video>
+                    <div class="video-placeholder">
+                        Відео "video1.mp4"<br>
+                        (файл відсутній)
+                    </div>
                 </div>
             </section>
             
             <!-- Секція 4: Аудіо -->
             <section>
                 <h2>Аудіо запис</h2>
-                <audio controls>
-                    <source src="videoplayback.m4a" type="audio/mp4">
-                    <source src="videoplayback.ogg" type="audio/ogg">
-                    Ваш браузер не підтримує відтворення аудіо.
-                    <a href="videoplayback.m4a">Завантажте аудіофайл</a>.
-                </audio>
+                <div class="audio-placeholder">
+                    Аудіо файл "videoplayback.m4a"<br>
+                    (файл відсутній)
+                </div>
             </section>
             
             <!-- Секція 5: YouTube відео -->
             <section>
                 <h2>Наше відео на YouTube</h2>
                 <div class="iframe-container">
-                    <iframe src="https://www.youtube.com/embed/ВАШ_КОД_ВІДЕО" 
-                            title="Відео про навчання в ІТ коледжі" 
+                    <iframe src="https://www.youtube.com/embed/5XUg2h8mi_g" 
+                            title="Відео про навчання в ІТ коледжі Львівської політехніки" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                     </iframe>
@@ -201,8 +262,9 @@
             <section>
                 <h2>Карта університетів та коледжів Львова</h2>
                 <div class="iframe-container">
-                    <iframe src="https://www.google.com/maps/d/embed?mid=ВАШ_КОД_КАРТИ" 
-                            title="Карта університетів та коледжів Львова">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1Rr1_1-MRcSR7VXHnI51L5rSPMg0&hl=en&ehbc=2E312F" 
+                            title="Карта університетів та коледжів Львова"
+                            allowfullscreen>
                     </iframe>
                 </div>
             </section>
@@ -213,28 +275,28 @@
             <h3>Спеціальності та освітні програми</h3>
             
             <div class="video-preview">
-                <img src="preview1.jpg" alt="Прев'ю відео 1">
-                <a href="#">Вивчай спеціальність майбутнього...</a>
+                <div class="placeholder-img">122</div>
+                <a href="https://itcollege.lviv.ua/specialty/kompyuterni-nauky/" target="_blank">122 Комп'ютерні науки</a>
             </div>
             
             <div class="video-preview">
-                <img src="preview2.jpg" alt="Прев'ю відео 2">
-                <a href="#">122 Комп'ютерні науки. Computer Science. Вступ у ІТ...</a>
+                <div class="placeholder-img">126</div>
+                <a href="https://itcollege.lviv.ua/specialty/informaczijni-systemy-ta-tehnologiyi/" target="_blank">126 Інформаційні системи та технології</a>
             </div>
             
             <div class="video-preview">
-                <img src="preview3.jpg" alt="Прев'ю відео 3">
-                <a href="#">172 Телекомунікації та радіотехніка – ...</a>
+                <div class="placeholder-img">172</div>
+                <a href="https://itcollege.lviv.ua/specialty/telekomunikacziyi-ta-radiotexnika/" target="_blank">172 Телекомунікації та радіотехніка</a>
             </div>
             
             <div class="video-preview">
-                <img src="preview4.jpg" alt="Прев'ю відео 4">
-                <a href="#">172 Телекомунікації та радіотехніка – Інжиніринг та...</a>
+                <div class="placeholder-img">029</div>
+                <a href="https://itcollege.lviv.ua/specialty/informaczijna-bibliotechna-ta-arkivna-sprava/" target="_blank">029 Інформаційна, бібліотечна та архівна справа</a>
             </div>
             
             <div class="video-preview">
-                <img src="preview5.jpg" alt="Прев'ю відео 5">
-                <a href="#">029 Інформаційна, бібліотечна та архівна справа</a>
+                <div class="placeholder-img">121</div>
+                <a href="https://itcollege.lviv.ua/specialty/inzheneriya-programnogo-zabezpechennya/" target="_blank">121 Інженерія програмного забезпечення</a>
             </div>
         </aside>
     </main>
@@ -243,6 +305,14 @@
         // Обробник кнопки "Підписатися"
         document.querySelector('.subscribe-btn').addEventListener('click', function() {
             window.open('https://www.youtube.com/@itcollegelviv', '_blank');
+        });
+        
+        // Додаємо обробники кліку для прев'ю відео
+        document.querySelectorAll('.video-preview a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.href, '_blank');
+            });
         });
     </script>
 </body>

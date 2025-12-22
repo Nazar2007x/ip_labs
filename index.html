@@ -1,63 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <title>Програмування в Internet - Головна</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #333; color: #fff; padding: 15px; text-align: center; }
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 15px; background: #444; }
-    nav ul li { position: relative; }
-    nav ul li a { color: #fff; text-decoration: none; padding: 8px 12px; display: block; }
-    nav ul li ol { display: none; position: absolute; top: 100%; left: 0; background: #555; padding: 10px; }
-    nav ul li:hover ol { display: block; }
-    nav ul li ol li { margin: 5px 0; }
-    main { display: flex; padding: 20px; gap: 20px; }
-    article { flex: 3; }
-    aside { flex: 1; background: #f0f0f0; padding: 10px; }
-    footer { margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Практична робота 1: Карта зображень та Таблиця</title>
+    <style>
+        /* Додаткові стилі для кращого вигляду таблиці */
+        table {
+            border-collapse: collapse; 
+            width: 70%; 
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Програмування в Internet</h1>
-    <h2>Головна сторінка</h2>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Головна</a></li>
-      <li><a href="#">Лабораторні роботи</a>
-        <ol>
-          <li><a href="lab1/index.html">Лабораторна робота №1</a></li>
-          <li><a href="lab2/index.html">Лабораторна робота №2</a></li>
-          <li><a href="lab3/index.html">Лабораторна робота №3</a></li>
-          <li><a href="lab4/index.html">Лабораторна робота №4</a></li>
-        </ol>
-      </li>
-    </ul>
-  </nav>
+    <h1>Практична робота 1</h1>
+    <hr>
 
-  <main>
-    <article>
-      <h2>Лабораторні роботи з програмування в Internet</h2>
-      <p>На цьому сайті розміщені лабораторні роботи з дисципліни "Програмування в Internet".</p>
-      <p>Оберіть лабораторну роботу з меню для перегляду.</p>
-    </article>
+    <h2>Завдання 1: Карта зображень (Варіант 2 - Web-технології)</h2>
+    <img src="v2.png" alt="Web-технології" usemap="#web_map" width="500" height="477" border="1">
+    
+    <map name="web_map">
+        
+        <area shape="poly" 
+              coords="245, 245, 130, 470, 20, 280, 105, 150, 245, 245" 
+              href="https://developer.mozilla.org/en-US/docs/Web/API" 
+              target="_blank" 
+              alt="Web APIs">
+              
+        <area shape="poly" 
+              coords="245, 245, 480, 280, 360, 470, 245, 245" 
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
+              target="_blank" 
+              alt="HTML">
 
-    <aside>
-      <h2>Корисні ресурси</h2>
-      <ul>
-        <li><a href="https://www.w3schools.com/html/">HTML</a></li>
-        <li><a href="https://www.w3schools.com/css/">CSS</a></li>
-        <li><a href="https://www.learn-js.org/">JavaScript</a></li>
-        <li><a href="https://www.sqltutorial.org/">SQL</a></li>
-        <li><a href="https://www.python.org/about/gettingstarted/">Python</a></li>
-      </ul>
-    </aside>
-  </main>
-  <footer>
-    <p>© 2025 Nazar Yaremchuk. Програмування в Internet</p>
-  </footer>
+        <area shape="poly" 
+              coords="245, 245, 105, 150, 245, 10, 245, 245" 
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS" 
+              target="_blank" 
+              alt="CSS">
+              
+        <area shape="poly" 
+              coords="245, 245, 245, 10, 385, 150, 245, 245" 
+              href="https://developer.mozilla.org/ru/docs/Web/HTTP" 
+              target="_blank" 
+              alt="HTTP">
+
+        <area shape="poly" 
+              coords="245, 245, 360, 470, 130, 470, 245, 245" 
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
+              target="_blank" 
+              alt="Javascript">
+        
+        <area shape="default" nohref alt="">
+    </map>
+    
+    <hr>
+    
+    <h2>Завдання 2: Складна таблиця (Варіант 19)</h2>
+    <table border="1" cellpadding="4">
+        <caption>Таблиця Варіант 19</caption>
+        
+        <tr>
+            <td colspan="2">Клітинка 1</td>
+            <td rowspan="2">Клітинка 2</td>
+        </tr>
+        
+        <tr>
+            <td>Клітинка 3</td>
+            <td>Клітинка 4</td>
+        </tr>
+        
+        <tr>
+            <td>Клітинка 5</td>
+            <td rowspan="2">Клітинка 6</td>
+            <td rowspan="2">Клітинка 7</td>
+        </tr>
+            <td>Клітинка 8</td>
+        <tr>
+            <td>Клітинка 9</td>
+        </tr>
+        
+    </table>
+
 </body>
 </html>

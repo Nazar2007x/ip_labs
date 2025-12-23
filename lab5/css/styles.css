@@ -1,0 +1,86 @@
+/* --- Загальні налаштування --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Використовуйте 'Open Sans', якщо маєте його */
+    background-color: #f5f5f5; 
+}
+
+/* Обмеження ширини контейнера (Box Model) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 1. Стилі для головного контейнера (Box Model & Color) --- */
+#featured_container {
+    padding: 30px 0; /* Внутрішні відступи: Box Model padding [cite: 15] */
+    background-color: #ffffff; /* Колір фону: CSS Color [cite: 23] */
+}
+
+/* --- 2. Налаштування сітки (Flexbox, Box Model) --- */
+/* Клас 'row' вирівнює елементи в рядок (імітація Bootstrap) */
+.row {
+    display: flex; /* Вирівнювання: Flexbox */
+    flex-wrap: wrap; /* Дозволяє переносити елементи */
+    margin-right: -15px; /* Забираємо зовнішні відступи */
+    margin-left: -15px;
+}
+
+/* Клас 'col-sm-6' задає ширину 50% (дві колонки) [cite: 13] */
+.col-sm-6 {
+    position: relative;
+    width: 50%; 
+    padding: 0 15px; /* Внутрішні відступи для колонки */
+    box-sizing: border-box; /* Важливо для Box Model: padding включається в ширину */
+    margin-bottom: 30px; /* Зовнішній відступ знизу: Box Model margin [cite: 18] */
+}
+
+/* --- 3. Стилі для картинки та позиціонування тексту --- */
+
+/* Контейнер посилання повинен бути позиціонований відносно */
+.col-sm-6 > div > span > a {
+    display: block;
+    position: relative; 
+    text-decoration: none; /* Прибираємо підкреслення */
+}
+
+/* Стилі для зображення */
+.img-responsive {
+    display: block;
+    width: 100%; /* Займає всю ширину колонки [cite: 13] */
+    height: auto;
+    border-radius: 4px; 
+}
+
+/* --- 4. Стилі для тексту та тіні (Color & Fonts) --- */
+
+/* Тінь (Градієнт) - важлива для читабельності */
+.shadow_featured {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Градієнт від прозорого до чорного внизу (CSS Color) */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%);
+    z-index: 1; /* Поверх картинки */
+    border-radius: 4px;
+}
+
+/* Заголовки */
+#featured_container h2 {
+    /* Позиціонування заголовка поверх картинки */
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    z-index: 2; /* Поверх тіні */
+
+    /* Властивості шрифту [cite: 32-37] */
+    font-size: 18px; /* CSS Fonts [cite: 37] */
+    font-weight: 700; /* CSS Fonts [cite: 34] */
+    color: #ffffff; /* Колір тексту білий: CSS Color [cite: 22] */
+    line-height: 1.4;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>PW2 — Методологія BEM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__container">
+    <nav class="header__nav">
+      <ul class="menu">
+        <li class="menu__item menu__item--active">Головна</li>
+        <li class="menu__item">Новини</li>
+        <li class="menu__item">Контакти</li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Варіант 3 -->
+  <section class="featured" id="featured_container">
+    <article class="featured__item featured__item--main">
+      <h1 class="featured__title">Головна подія університету</h1>
+      <p class="featured__text">
+        Короткий опис важливої події або анонсу.
+      </p>
+    </article>
+
+    <article class="featured__item">
+      <h2 class="featured__subtitle">Інша подія</h2>
+      <p class="featured__text">Коротка інформація про подію.</p>
+    </article>
+  </section>
+</header>
+
+<main class="main">
+  <section class="news">
+    <h2 class="news__heading">Новини університету</h2>
+
+    <article class="news__item">
+      <h3 class="news__title">Заголовок новини</h3>
+      <p class="news__date">15.03.2025</p>
+      <p class="news__text">Короткий опис новини університету.</p>
+    </article>
+
+    <article class="news__item">
+      <h3 class="news__title">Ще одна новина</h3>
+      <p class="news__date">14.03.2025</p>
+      <p class="news__text">Короткий опис другої новини.</p>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__column">
+      <h4 class="footer__title">Контакти</h4>
+      <p class="footer__text">email@lpnu.ua</p>
+    </div>
+
+    <div class="footer__column">
+      <h4 class="footer__title">Соцмережі</h4>
+      <p class="footer__text">Facebook / Instagram</p>
+    </div>
+
+    <div class="footer__column">
+      <h4 class="footer__title">Адреса</h4>
+      <p class="footer__text">м. Львів</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
